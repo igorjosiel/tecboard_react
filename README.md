@@ -3,6 +3,7 @@
 ### Conceitos
 
 **Node:** É o **ambiente** que permite que ferramentas JavaScript (como o Vite) rodem no computador, fora do navegador.
+
 **Vite:** É a **ferramenta** que usa o Node.js para criar, configurar e otimizar seu projeto React. Ele transforma o código React (com JSX) em algo que o navegador entende e fornece um servidor de desenvolvimento rápido para codificar.
 
 **Hot Module Replacement:** é uma funcionalidade provida pelo Vite que permite que as alterações feitas no código sejam refletidas imediatamente no navegador, sem a necessidade de recarregar a página. Isso agiliza o processo de desenvolvimento, pois com isso é possível ver as modificações em tempo real.
