@@ -1,0 +1,45 @@
+.card-event {
+    background-color: #212121;
+    display: flex;
+    flex-direction: column;
+    width: 282px;
+    color: #FFFFFF;
+}
+
+.card-event p,
+.card-event h4 {
+    margin: 0;
+}
+
+.card-event .body {
+    padding: 24px 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+}
+
+.card-event .tag {
+    background-color: #4A4949;
+    border-radius: 4px;
+    padding: 8px;
+    font-family: "Orbitron", sans-serif;
+    font-weight: 700;
+    font-size: 10px;
+    line-height: 120%;
+    letter-spacing: 10%;
+    text-transform: uppercase;
+}
+
+.card-event .date {
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 120%;
+}
+
+.card-event .title {
+    font-family: "Orbitron", sans-serif;
+    font-weight: 700;
+    font-size: 25px;
+    line-height: 125%;
+}
