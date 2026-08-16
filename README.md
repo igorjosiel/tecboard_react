@@ -53,3 +53,13 @@ Isso vale pra qualquer expressão JavaScript: chamadas de função, operadores t
 **Operador Rest:** (...): Ele junta os elementos restantes em uma variável.
 
 **Boas práticas e organização do projeto:** organizar um projeto React, movendo cada componente para sua própria pasta e arquivo (index.JSX) para a pasta **components** dentro de **src**, exportando-os e ajustando as importações. Isso inclui também a organização dos estilos em arquivos CSS específicos para cada componente, tudo para deixar o código mais limpo e fácil de manter.
+
+**React.createElement:** é uma função que cria objetos JavaScript que representam os elementos do DOM. Por exemplo, <h2>Hello, World!</h2> em JSX se torna React.createElement('h2', null, 'Hello, World!').
+
+**Virtual DOM:** é uma representação em memória do DOM real. Quando o estado de um componente React muda, o React cria um novo Virtual DOM e o compara com o anterior. Esse processo de comparação é chamado de "reconciliação", e o React calcula as diferenças para atualizar apenas as partes necessárias do DOM real. Após calcular as diferenças, o React utiliza a função render para atualizar o DOM real. A função ReactDOM.render é responsável por inserir os elementos React no DOM real, como em ReactDOM.render(element, document.getElementById('root')).
+
+**Percorrendo um array:** para percorrer um array no React podemos utilizar o método forEach. Porém seu uso é limitado, pois esse método não retorna nada, só itera e faz alguma ação nos elementos do array. O mais indicado seria o .map, pois esse sim percorre o array e retorna algo (o JSX) no final da execução, que é o que precisamos para renderizar cada elemento do array.
+
+**Propriedade key:** a key é crucial para ajudar o React a otimizar a atualização da interface, identificando e atualizando apenas os itens que mudaram, em vez de renderizar a lista inteira novamente. Deve ser passado com um valor que seja único para cada elemento da lista para não confundir o React.
+
+**O que é permitido colocar dentro de JSX?** só podemos colocar expressões dentro das chaves. No JavaScript, expressão é tudo aquilo que tem um valor no final. Ou seja, algo que pode ser avaliado e que retorna um resultado. Alguns exemplos: variáveis: {nome}, funções sendo chamadas: {formatarData(data)}, operadores matemáticos: {1 + 2}, operadores lógicos ou ternários: {estaLogado ? 'Sair' : 'Entrar'}, e propriedades de objetos: {pessoa.nome}. As estruturas de controle como if, for, while, switch... não é possível.
