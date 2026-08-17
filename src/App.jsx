@@ -5,7 +5,7 @@ import { FormEvent } from './components/FormEvent';
 import { Theme } from './components/Theme';
 
 function App() {
-  const temas = [
+  const themes = [
     {
       id: 1,
       nome: 'front-end'
@@ -34,10 +34,10 @@ function App() {
 
   const eventos = [
     {
-      capa: 'https://raw.githubusercontent.com/viniciosneves/tecboard-assets/refs/heads/main/imagem_1.png',
-      tema: temas[0],
-      data: new Date(),
-      titulo: 'Mulheres no Front'
+      cover: 'https://raw.githubusercontent.com/viniciosneves/tecboard-assets/refs/heads/main/imagem_1.png',
+      theme: themes[0],
+      date: new Date(),
+      title: 'Mulheres no Front'
     }
   ];
 
@@ -47,9 +47,9 @@ function App() {
         <img src="/logo.png" alt="" />
       </header>
       <Banner />
-      <FormEvent />
+      <FormEvent themes={themes} />
 
-      {temas.map(function (item) {
+      {themes.map(function (item) {
         return (
           <section key={item.id}>
             <Theme tema={item} />
