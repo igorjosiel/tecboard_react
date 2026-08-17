@@ -7,7 +7,7 @@ import { SelectInput } from '../SelectInput';
 
 import './form-event.styles.css';
 
-export function FormEvent ({ themes }) {
+export function FormEvent ({ themes, onSubmit }) {
   function handleSubmittedForm(formData) {
     const event = {
       cover: formData.get('eventCover'),
@@ -18,8 +18,7 @@ export function FormEvent ({ themes }) {
       title: formData.get('eventName')
     }
 
-    console.log('Esse é o novo evento: ', event);
-    // aoSubmeter(evento);
+    onSubmit(event);
   }
 
     return (

@@ -1,19 +1,19 @@
 import './card-event.styles.css';
 
-export function CardEvent({ evento }) {
+export function CardEvent({ event }) {
     return (
         <div className='card-event'>
-            <img src={evento.cover} alt={evento.title}/>
+            <img src={event.cover} alt={event.title}/>
             
             <div className="body">
                 <p className="tag">
-                    {evento.theme.nome}
+                    {event.theme.name}
                 </p>
                 <p className='date'>
-                    {evento.date.toLocaleDateString('pt-BR')}
+                    {event.date.toLocaleDateString('pt-BR')}
                 </p>
                 <h4 className="title">
-                    {evento.title}
+                    {event.title}
                 </h4>
             </div>
         </div>

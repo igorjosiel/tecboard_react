@@ -1,4 +1,5 @@
-import './App.css'
+import './App.css';
+import { useState } from 'react';
 import { Banner } from './components/Banner';
 import { CardEvent } from './components/CardEvent';
 import { FormEvent } from './components/FormEvent';
@@ -32,14 +33,18 @@ function App() {
     },
   ];
 
-  const eventos = [
+  const [events, setEvents] = useState([
     {
       cover: 'https://raw.githubusercontent.com/viniciosneves/tecboard-assets/refs/heads/main/imagem_1.png',
       theme: themes[0],
       date: new Date(),
       title: 'Mulheres no Front'
     }
-  ];
+  ]);
+
+  function addNewEvent(event) {
+    setEvents([...events, event]);
+  }
 
   return (
     <main>
@@ -47,13 +52,18 @@ function App() {
         <img src="/logo.png" alt="" />
       </header>
       <Banner />
-      <FormEvent themes={themes} />
+      <FormEvent themes={themes} onSubmit={addNewEvent} />
 
       {themes.map(function (item) {
         return (
           <section key={item.id}>
             <Theme tema={item} />
-            <CardEvent evento={eventos[0]}/>
+
+            {events.map((item, index) => {
+              return (
+                <CardEvent event={item} key={index} />
+              );
+            })}
           </section>
         )
       })}
