@@ -73,3 +73,26 @@ Isso vale pra qualquer expressão JavaScript: chamadas de função, operadores t
 **imutabilidade:** para atualizar o estado, não se deve modificar diretamente a variável do estado (como usar push em um array existente). Em vez disso, é necessário passar um novo valor para a função de atualização do estado. No caso de arrays, isso é feito criando um novo array (geralmente usando o Spread Operator para copiar os itens existentes e adicionar os novos).
 
 **input controlado:** Os dados dos inputs são controlados 100% pelo estado da aplicação, ou seja, para cada input há um estado vinculado à propriedade value. **onSubmit**: Evento disparado ao enviar o formulário, geralmente usado para impedir o recarregamento da página e processar os dados. **onChange:** Evento disparado a cada alteração no campo, usado para atualizar o estado do componente com o valor digitado.
+
+**método de array filter:** cria um novo array com todos os elementos que passam em um teste implementado pela função fornecida. Ele não modifica o array original.
+
+eventos.filter(evento => {
+  // Lógica de filtragem
+  return evento.tema.id === tema.id;
+});
+
+Se a condição evento.tema.id === tema.id for verdadeira, o evento é incluído no novo array resultante do filter.
+Se a condição for falsa, o evento é descartado e não entra no novo array.
+
+**método de array some:** testa se pelo menos um elemento no array passa no teste implementado pela função fornecida. Ele retorna true se encontrar um elemento para o qual a função de callback retorne um valor verdadeiro, e false caso contrário. Ele para de iterar assim que encontra um elemento que satisfaz a condição.
+
+eventos.some(evento => {
+  // Lógica de verificação
+  return evento.tema.id === tema.id;
+});
+
+Se o some encontrar qualquer evento que satisfaça essa condição (ou seja, que tenha o mesmo id de tema), ele imediatamente retorna true.
+Se ele percorrer todo o array de eventos e não encontrar nenhum que satisfaça a condição, ele retorna false.
+
+**npm run dev:** ambiente de desenvolvimento. Projeto rodando no navegador localmente.
+**npm run build:** ambiente de produção. Cria a pasta dist com os arquivos da aplicação otimizados.
