@@ -9,27 +9,27 @@ function App() {
   const themes = [
     {
       id: 1,
-      nome: 'front-end'
+      name: 'front-end'
     },
     {
       id: 2,
-      nome: 'back-end'
+      name: 'back-end'
     },
     {
       id: 3,
-      nome: 'devops'
+      name: 'devops'
     },
     {
       id: 4,
-      nome: 'inteligência artificial`'
+      name: 'inteligência artificial'
     },
     {
       id: 5,
-      nome: 'data science'
+      name: 'data science'
     },
     {
       id: 6,
-      nome: 'cloud'
+      name: 'cloud'
     },
   ];
 
@@ -51,6 +51,7 @@ function App() {
       <header>
         <img src="/logo.png" alt="" />
       </header>
+      
       <Banner />
       <FormEvent themes={themes} onSubmit={addNewEvent} />
 
@@ -68,14 +69,15 @@ function App() {
 
               <div className="events">
                 {events
-                .filter((event) => {
-                  return event.theme.id === theme.id
-                })
-                .map((event, index) => {
-                  return (
-                    <CardEvent event={event} key={index} />
-                  );
-                })}
+                  .filter((event) => {
+                    return event.theme.id === theme.id
+                  })
+                  .map((event, index) => {
+                    return (
+                      <CardEvent event={event} key={index} />
+                    );
+                  })
+                }
               </div>
             </section>
           );

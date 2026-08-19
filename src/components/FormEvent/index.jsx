@@ -27,7 +27,7 @@ export function FormEvent ({ themes, onSubmit }) {
           Preencha para criar um evento:
         </FormTitle>
 
-        <div className="campos">
+        <div className="fields">
           <FormField>
             <Label htmlFor="eventName">
               Qual o nome do evento?
@@ -35,7 +35,7 @@ export function FormEvent ({ themes, onSubmit }) {
             <FormInput
               type="text"
               id='eventName'
-              placeholder='Summer dev hits'
+              placeholder='Nome do evento'
               name='eventName'
             />
           </FormField>

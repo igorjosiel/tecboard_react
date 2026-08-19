@@ -1,5 +1,5 @@
 import './theme.styles.css';
 
 export function Theme({ tema }) {
-    return <h3 className='theme-title'>{tema.nome}</h3>
+    return <h3 className='theme-title'>{tema.name}</h3>
 }

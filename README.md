@@ -95,4 +95,4 @@ Se o some encontrar qualquer evento que satisfaça essa condição (ou seja, que
 Se ele percorrer todo o array de eventos e não encontrar nenhum que satisfaça a condição, ele retorna false.
 
 **npm run dev:** ambiente de desenvolvimento. Projeto rodando no navegador localmente.
-**npm run build:** ambiente de produção. Cria a pasta dist com os arquivos da aplicação otimizados.
+**npm run build:** ambiente de produção. Cria a pasta dist com os arquivos da aplicação otimizados, converte todo o código React em javascript puro.

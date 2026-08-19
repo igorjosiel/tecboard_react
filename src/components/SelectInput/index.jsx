@@ -8,9 +8,11 @@ export function SelectInput ({ itens, ...rest }) {
             </option>
 
             {itens.map(function (item) {
-                return <option key={item.id} value={item.id}>
-                    {item.nome}
-                </option>
+                return (
+                    <option key={item.id} value={item.id}>
+                        {item.name}
+                    </option>
+                );
             })}
         </select>
     );
