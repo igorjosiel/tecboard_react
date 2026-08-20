@@ -1,100 +1,33 @@
-### Tecboard
+# 🚀 Tecboard
 
-### Conceitos
+Aplicação desenvolvida em React para o gerenciamento de eventos de tecnologia baseado em um tema específico. É possível cadastrar e visualizar os eventos criados na tela principal da aplicação.
 
-**Node:** É o **ambiente** que permite que ferramentas JavaScript (como o Vite) rodem no computador, fora do navegador.
+## 📸 Preview
 
-**Vite:** É a **ferramenta** que usa o Node.js para criar, configurar e otimizar seu projeto React. Ele transforma o código React (com JSX) em algo que o navegador entende e fornece um servidor de desenvolvimento rápido para codificar.
+![Formulário de cadastro de eventos](./public/eventsform.png)
+![Renderização dos eventos](./public/renderevents.png)
 
-**Hot Module Replacement:** é uma funcionalidade provida pelo Vite que permite que as alterações feitas no código sejam refletidas imediatamente no navegador, sem a necessidade de recarregar a página. Isso agiliza o processo de desenvolvimento, pois com isso é possível ver as modificações em tempo real.
+## 🛠️ Tecnologias
 
-**pasta public:** funciona como um local para armazenar arquivos estáticos que precisam ser acessados diretamente pelo navegador. É uma pasta onde colocamos coisas que o servidor web (neste caso, o Vite) vai disponibilizar "como estão", sem nenhum processamento adicional. O Vite se encarrega de servir esses arquivos como se estivessem na raiz do servidor web. É conveniente para guardar: imagens, ícones, fontes personalizadas e arquivos que não precisam ser processados pelo React ou pelo Vite, mas que sua aplicação precisa carregar. Ao usar a pasta public, podemos referenciar esses arquivos no código HTML ou JSX usando um caminho que começa com /, como /logo.png ou /banner.png, e o Vite se encarrega de servi-los corretamente.
+- React
+- Vite
+- JavaScript
+- CSS
 
-**arquivo index.css:** é um arquivo onde podemos definir os estilos que afetam a aplicação como um todo, como resetar margens e paddings padrão do navegador, ou definir variáveis CSS globais. Ele é importado e aplicado antes dos estilos específicos de componentes, garantindo que esses estilos globais sejam carregados primeiro.
+## 📦 Instalação
 
-**jsx:** é uma extensão de sintaxe para JavaScript que permite escrever código com uma aparência muito semelhante ao HTML dentro dos arquivos JavaScript. Isso torna a criação de interfaces de usuário mais intuitiva, pois podemos descrever a estrutura da UI de forma declarativa. O JSX é transformado em chamadas de função JavaScript pelo processo de build (feito pelo Vite, neste caso). Essas funções criam os elementos da interface no navegador. Quando escrevemos <img src="/logo.png" /> é convertido em algo que o navegador entende como um elemento de imagem. Dentro do JSX, podemos usar todo o poder do JavaScript. Por exemplo, podemos incorporar variáveis, expressões e lógica JavaScript diretamente entre chaves {}. Isso permite criar interfaces dinâmicas e reativas.
+```bash
+npm install
+```
 
-**Regras do JSX:** Para que o JSX funcione corretamente, precisamos seguir algumas regras essenciais:
-1 - Elementos adjacentes no JSX devem estar dentro de uma única tag pai.
-2 - Todas as tags precisam ser fechadas, incluindo as tags "órfãs" (como img), ex.: <img src="imagem.png" alt="imagem" />.
-3 - Devemos usar camelCase para a maioria dos atributos, como className.
-4 - Quando quiser exibir uma variável ou resultado de alguma função dentro do JSX, use chaves:
-const nome = 'João'
+## Execução do projeto
 
-return <p>Olá, {nome}!</p>
-Isso vale pra qualquer expressão JavaScript: chamadas de função, operadores ternários, etc.
+```bash
+npm run dev
+```
 
-**React.Fragment:** (ou sua forma abreviada, <>...</>) é uma solução criada pelo React pra quando você quer retornar múltiplos elementos sem adicionar uma tag extra no HTML gerado. Ele serve pra agrupar elementos no JSX sem interferir no layout final da página."
+## 📚 Documentação
 
-**componentes:** são blocos de código reutilizáveis. É uma função JavaScript que começa com letra maiúscula (diferente das funções JavaScript comuns que começam com letra minúscula). Neles usamos a sintaxe de JSX. As propriedes utilizadas nas tags HTML são informadas seguindo o padrão camelCase (primeira palavra em minúsculo e as próximas com a primeira letra em maiúsculo) como htmlFor, className, etc,  para evitar conflitos com palavras reservadas do JavaScript.
+Durante o desenvolvimento do projeto, foram estudados diversos conceitos relacionados ao React, JavaScript e Vite.
 
-**React:** é uma biblioteca criada pelo Facebook (agora Meta) em 2013 para construir interfaces de usuário, tanto para web quanto para mobile (com React Native).
-
-**Front-end imperativo:** instruímos o navegador linha por linha sobre o que fazer com cada elemento do DOM, criar, remover, alterar, esconder elementos, etc.
-
-**Front-end declarativo:** declaramos como queremos que um componente seja, e o React se encarrega de transformar essa declaração em algo que o navegador entenda e renderiza, sem que precisemos manipular o DOM diretamente.
-
-**props:** objeto de parâmetros que o React injeta automaticamente nos nossos componentes, que geralmente chamamos de props. Ao passar informações para o componente (seja um texto entre as tags ou atributos como type="text"), o React agrupa todas essas informações em um único objeto e o entrega como o primeiro argumento para a sua função de componente.
-
-<MeuComponente texto="Olá" numero={123}>Conteúdo filho</MeuComponente>
-
-{
-  texto: "Olá",
-  numero: 123,
-  children: "Conteúdo filho"
-}
-
-**children:** é utilizado para renderizar conteúdo aninhado dentro de um componente.
-
-**Destructuring:** desestrutura objetos JavaScript para extrair propriedades diretamente dos parâmetros de uma função, como ({ children }) em vez de props.children, tornando o código mais conciso.
-
-**Operator Spread:** usado para passar todas as propriedades recebidas por um componente diretamente para um elemento HTML interno, como return <input {...props} />;, o que simplifica a passagem de muitos atributos. Ele espalha o conteúdo de um array ou as propriedades de um objeto em outro lugar.
-
-**Operador Rest:** (...): Ele junta os elementos restantes em uma variável.
-
-**Boas práticas e organização do projeto:** organizar um projeto React, movendo cada componente para sua própria pasta e arquivo (index.JSX) para a pasta **components** dentro de **src**, exportando-os e ajustando as importações. Isso inclui também a organização dos estilos em arquivos CSS específicos para cada componente, tudo para deixar o código mais limpo e fácil de manter.
-
-**React.createElement:** é uma função que cria objetos JavaScript que representam os elementos do DOM. Por exemplo, <h2>Hello, World!</h2> em JSX se torna React.createElement('h2', null, 'Hello, World!').
-
-**Virtual DOM:** é uma representação em memória do DOM real. Quando o estado de um componente React muda, o React cria um novo Virtual DOM e o compara com o anterior. Esse processo de comparação é chamado de "reconciliação", e o React calcula as diferenças para atualizar apenas as partes necessárias do DOM real. Após calcular as diferenças, o React utiliza a função render para atualizar o DOM real. A função ReactDOM.render é responsável por inserir os elementos React no DOM real, como em ReactDOM.render(element, document.getElementById('root')).
-
-**Percorrendo um array:** para percorrer um array no React podemos utilizar o método forEach. Porém seu uso é limitado, pois esse método não retorna nada, só itera e faz alguma ação nos elementos do array. O mais indicado seria o .map, pois esse sim percorre o array e retorna algo (o JSX) no final da execução, que é o que precisamos para renderizar cada elemento do array.
-
-**Propriedade key:** a key é crucial para ajudar o React a otimizar a atualização da interface, identificando e atualizando apenas os itens que mudaram, em vez de renderizar a lista inteira novamente. Deve ser passado com um valor que seja único para cada elemento da lista para não confundir o React.
-
-**O que é permitido colocar dentro de JSX?** só podemos colocar expressões dentro das chaves. No JavaScript, expressão é tudo aquilo que tem um valor no final. Ou seja, algo que pode ser avaliado e que retorna um resultado. Alguns exemplos: variáveis: {nome}, funções sendo chamadas: {formatarData(data)}, operadores matemáticos: {1 + 2}, operadores lógicos ou ternários: {estaLogado ? 'Sair' : 'Entrar'}, e propriedades de objetos: {pessoa.nome}. As estruturas de controle como if, for, while, switch... não é possível.
-
-**event.preventDefault():** para evitar que a página seja recarregada ao realizar uma submissão de um formulário, que é o comportamento padrão de um formulário HTML, utilizamos esse método.
-
-**classe FormData:** classe do Javascript utilizada para acessar os dados de um formulário. Podemos criar uma instância de FormData passando event.target (que representa o formulário que foi submetido), como em const formData = new FormData(event.target);, ele automaticamente coleta todos os dados dos campos do formulário. Depois de ter o objeto formData, podemos facilmente obter os valores de cada campo usando o método formData.get("nomeDoCampo"), onde "nomeDoCampo" é o atributo name que definimos nos elementos de input no HTML.
-
-**estados:** é uma funcionalidade importante no React, pois quando alterados causam uma nova renderização na interface do usuário. Recebe um valor inicial como parâmetro e retorna um array de duas posições. A primeira posição é o valor atual do estado (por exemplo, a lista de eventos). A segunda posição é uma função (comumente chamada de setNomeDoEstado, como setEventos) que permite atualizar o estado.
-
-**imutabilidade:** para atualizar o estado, não se deve modificar diretamente a variável do estado (como usar push em um array existente). Em vez disso, é necessário passar um novo valor para a função de atualização do estado. No caso de arrays, isso é feito criando um novo array (geralmente usando o Spread Operator para copiar os itens existentes e adicionar os novos).
-
-**input controlado:** Os dados dos inputs são controlados 100% pelo estado da aplicação, ou seja, para cada input há um estado vinculado à propriedade value. **onSubmit**: Evento disparado ao enviar o formulário, geralmente usado para impedir o recarregamento da página e processar os dados. **onChange:** Evento disparado a cada alteração no campo, usado para atualizar o estado do componente com o valor digitado.
-
-**método de array filter:** cria um novo array com todos os elementos que passam em um teste implementado pela função fornecida. Ele não modifica o array original.
-
-eventos.filter(evento => {
-  // Lógica de filtragem
-  return evento.tema.id === tema.id;
-});
-
-Se a condição evento.tema.id === tema.id for verdadeira, o evento é incluído no novo array resultante do filter.
-Se a condição for falsa, o evento é descartado e não entra no novo array.
-
-**método de array some:** testa se pelo menos um elemento no array passa no teste implementado pela função fornecida. Ele retorna true se encontrar um elemento para o qual a função de callback retorne um valor verdadeiro, e false caso contrário. Ele para de iterar assim que encontra um elemento que satisfaz a condição.
-
-eventos.some(evento => {
-  // Lógica de verificação
-  return evento.tema.id === tema.id;
-});
-
-Se o some encontrar qualquer evento que satisfaça essa condição (ou seja, que tenha o mesmo id de tema), ele imediatamente retorna true.
-Se ele percorrer todo o array de eventos e não encontrar nenhum que satisfaça a condição, ele retorna false.
-
-**npm run dev:** ambiente de desenvolvimento. Projeto rodando no navegador localmente.
-**npm run build:** ambiente de produção. Cria a pasta dist com os arquivos da aplicação otimizados, converte todo o código React em javascript puro.
-
-**método de array find:** esse método do JavaScript serve para procurar o primeiro item dentro de uma lista (array) que cumpre uma regra, uma condição. Ele testa cada item da lista. Assim que achar o primeiro item correto, ele para a iteração e devolve esse item. Se não achar nada, ele devolve undefined.
+- 📖 [Conceitos estudados](./docs/concepts.md)
