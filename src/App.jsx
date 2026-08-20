@@ -38,7 +38,8 @@ function App() {
       cover: 'https://raw.githubusercontent.com/viniciosneves/tecboard-assets/refs/heads/main/imagem_1.png',
       theme: themes[0],
       date: new Date(),
-      title: 'Mulheres no Front'
+      title: 'Mulheres no Front',
+      description: "Esse evento vai ser dahora",
     }
   ]);
 
@@ -65,7 +66,7 @@ function App() {
 
           return (
             <section key={theme.id}>
-              <Theme tema={theme} />
+              <Theme theme={theme} />
 
               <div className="events">
                 {events

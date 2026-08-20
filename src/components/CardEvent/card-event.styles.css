@@ -4,6 +4,8 @@
     flex-direction: column;
     width: 282px;
     color: #FFFFFF;
+    border-radius: 10px;
+    overflow: hidden;
 }
 
 .card-event p,

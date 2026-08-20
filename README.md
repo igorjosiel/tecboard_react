@@ -96,3 +96,5 @@ Se ele percorrer todo o array de eventos e não encontrar nenhum que satisfaça 
 
 **npm run dev:** ambiente de desenvolvimento. Projeto rodando no navegador localmente.
 **npm run build:** ambiente de produção. Cria a pasta dist com os arquivos da aplicação otimizados, converte todo o código React em javascript puro.
+
+**método de array find:** esse método do JavaScript serve para procurar o primeiro item dentro de uma lista (array) que cumpre uma regra, uma condição. Ele testa cada item da lista. Assim que achar o primeiro item correto, ele para a iteração e devolve esse item. Se não achar nada, ele devolve undefined.
